@@ -1,2 +1,7 @@
 node_modules
 .env
+
+# editor files
+.vscode
+.idea
+

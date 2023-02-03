@@ -4,6 +4,7 @@
   "description": "Generate a signature to Start and Join Meetings and Webinars with the Zoom Meeting SDKs.",
   "main": "index.js",
   "scripts": {
+    "format": "prettier --ignore-path .gitignore --write .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
   },
