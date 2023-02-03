@@ -12,6 +12,15 @@ app.use(bodyParser.json(), cors())
 app.options('*', cors())
 
 app.post('/', (req, res) => {
+  console.log('start post')
+  console.log(`ZOOM_SDK_KEY : ${JSON.stringify(process.env.ZOOM_SDK_KEY)}`)
+
+  console.log(
+    `ZOOM_SDK_SECRET : ${JSON.stringify(process.env.ZOOM_SDK_SECRET)}`,
+  )
+
+  console.log(`req.body : ${JSON.stringify(req.body)}`)
+
   const iat = Math.round(new Date().getTime() / 1000) - 30
   const exp = iat + 60 * 60 * 2
 
@@ -36,6 +45,8 @@ app.post('/', (req, res) => {
     process.env.ZOOM_SDK_SECRET,
   )
 
+  console.log('end post : ')
+  console.log(signature)
   res.json({
     signature: signature,
   })
